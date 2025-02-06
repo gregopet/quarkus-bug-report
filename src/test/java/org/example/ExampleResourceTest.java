@@ -37,7 +37,7 @@ class ExampleResourceTest {
                     .body(is("hey"));
         }
         Awaitility.await().atMost(Duration.ofSeconds(2)).untilAsserted(() -> {
-            wiremock.verifyThat(200, getRequestedFor(urlPathMatching("/endpoint")));
+            wiremock.verifyThat(500, getRequestedFor(urlPathMatching("/endpoint")));
         });
     }
 
